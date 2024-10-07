@@ -12,35 +12,56 @@ void push(int data){
 }
 void pop(){
     if(top==-1){
-        printf("Empty\n");
+        printf("Underflow\n");
     }
     else{
-        printf("Dequeued %d\n",arr[top]);
+        printf("Popped %d\n",arr[top]);
         top-=1;
     }
 }
 void peak(){
-    printf("Top value is %d",arr[top]);
+    printf("Top value is %d\n",arr[top]);
 }
 void display(){
     if(top==-1){
-        printf("Empty\n");
+        printf("Underflow\n");
     }
     else{
-        for (int i=0;i<=top;i++){
+        for (int i=top;i>=0;i--){
             printf("%d ", arr[i]);
-        }
+        }printf("\n");
     }
 }
 
 int main(){
-    push(10);
-    push(20);
-    pop();
-    pop();
-    pop();
-    push(22);
-    push(21);
-    display();
+    int elem,choice;
+    while(1){
+    printf("1. Push, 2. Pop, 3. Peak, 4. Display, 5. Exit\n");
+    scanf("%d",&choice);
+    switch(choice){
+        case 1:
+            printf("Enter the value : ");
+            scanf("%d",&elem);
+            push(elem);
+            break;
+        case 2:
+            pop();
+            break;
+        case 3:
+            peak();
+            break;
+        case 4:
+            display();
+            break;
+        case 5:
+            printf("Exiting. . . \n");
+            exit(0);
+            break;
+        default:
+            printf("Invalid input\n");
+    
+    }
+    }
+    
     return 0;
 }
