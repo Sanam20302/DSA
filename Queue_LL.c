@@ -19,8 +19,10 @@ void enqueue(int data){
 void dequeue(){
     if(front==NULL || front>rear){
         printf("Empty\n");
-    }
-    else{
+    }else if(front==rear){
+			printf("\n%d dequeued\n",front->data);
+			front=rear=NULL;
+    }else{
         printf("Dequeued %d\n",front->value);
         front = front->next;
     }    
