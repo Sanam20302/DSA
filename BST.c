@@ -40,6 +40,7 @@ void post_ord_trav(struct node* root){
         printf("%d ",root->value);
     }
 }
+
 void pre_ord_trav(struct node* root){
     if(root!=NULL){
         printf("%d ",root->value);
@@ -78,6 +79,7 @@ struct node* delete(struct node*root,int value){
     }
     return root;
 }
+
 void search(struct node *root,int value){
     while(root!=NULL){
         if(root->value == value){
