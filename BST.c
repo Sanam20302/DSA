@@ -78,7 +78,21 @@ struct node* delete(struct node*root,int value){
     }
     return root;
 }
-
+void search(struct node *root,int value){
+    while(root!=NULL){
+        if(root->value == value){
+            printf("\nValue found");
+            return;
+        }
+        else if(root->value<value){
+            root = root->right;
+        }
+        else if(root->value>value){
+            root = root->left;
+        }
+    }
+    printf("\nValue not found");
+}
 
 int main()
 {
@@ -108,6 +122,7 @@ int main()
     printf("\nPre-order traversal : ");
     pre_ord_trav(root);
 
-    printf("\n");
+    search(root,10);
+    search(root,2);
     return 0;
 }
