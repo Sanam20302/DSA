@@ -20,8 +20,8 @@ void dequeue(){
     if(front==NULL || front>rear){
         printf("Empty\n");
     }else if(front==rear){
-			printf("\n%d dequeued\n",front->data);
-			front=rear=NULL;
+	printf("\n%d dequeued\n",front->value);
+	front=rear=NULL;
     }else{
         printf("Dequeued %d\n",front->value);
         front = front->next;
