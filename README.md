@@ -9,3 +9,4 @@
 - BST : Implementing Binary Search tree using Linked list.
 - DFS : Non-recursive DFS using array.
 - DFS2 : Recursive DFS using array.
+- BFS : BFS using array.
