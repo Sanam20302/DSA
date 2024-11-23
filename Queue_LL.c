@@ -5,11 +5,12 @@ struct node{
     struct node* next;
 }
 *temp,*front = NULL,*rear = NULL;
+
 void enqueue(int data){
     temp = (struct node *)(malloc(sizeof(struct node)));
     temp->value = data;
     temp->next = NULL;
-    if(front==NULL || front>rear){
+    if(front==NULL){
         front = rear = temp;
     }else{
         rear->next = temp;
@@ -17,18 +18,21 @@ void enqueue(int data){
     }
 }
 void dequeue(){
-    if(front==NULL || front>rear){
+    if(front==NULL){
         printf("Empty\n");
-    }else if(front==rear){
-	printf("\n%d dequeued\n",front->value);
+    }
+    if(front==rear){
+	printf("Dequeued %d\n",front->value);
 	front=rear=NULL;
-    }else{
+    }
+    else{
         printf("Dequeued %d\n",front->value);
         front = front->next;
     }    
 }
+
 void display(){
-    if(front==NULL || front>rear){
+    if(front==NULL){
         printf("Empty\n");
     }
     else{
@@ -41,6 +45,9 @@ void display(){
 int main(){
     enqueue(10);
     enqueue(20);
+    enqueue(33);
+    enqueue(33);
+    enqueue(11);
     dequeue();
     dequeue();
     dequeue();
